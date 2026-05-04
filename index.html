@@ -2,34 +2,13 @@
  <head>
    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
  </head>
+ 
  <body>
-   <a-scene>
-     <a-assets>
-       <img id="sky" src="nightsky.jpg">
-       <img id="dog" src="cursordog.jpg">
-       <!-- Add asset here -->
-       <a-asset-item
-         id="restaurant"
-         src="spongebob_hamburger_restaurant.glb"></a-asset-item>
-     </a-assets>
+    <a-scene>
+      <a-plane width="10" height="15" position="0 -2 -10" color="red" rotation="-90 0 0"></a-plane>
 
-
-     <a-sky src="#sky"></a-sky>
-     <a-plane
-       src="#dog"
-       rotation="-90 0 0"
-       width="20"
-       height="20"></a-plane>
-     <a-text
-       value="Hello!"
-       color="#3B23EB"
-       align="center"
-       position="0 3 -4"></a-text>
-     <!-- Add entity here: -->
-     <a-glb-model
-       src="#restaurant"
-       position="0 2 -4"
-       scale="0.5 0.5 0.5"></a-glb-model>
-   </a-scene>
+      <a-box position="0 2 -2.5" rotation="45 45 45"></a-box> 
+     <a-light color="blue" position="0 5 -3"></a-light>
+    </a-scene>
  </body>
 </html>
