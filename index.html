@@ -1,14 +1,19 @@
+<!DOCTYPE html>
 <html>
  <head>
-   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
  </head>
- 
+
  <body>
     <a-scene>
-      <a-plane width="10" height="15" position="0 -2 -10" color="red" rotation="-90 0 0"></a-plane>
+      <a-plane width="10" height="15" position="0 -2 -10" color="#AAAAAA" rotation="-90 0 0"></a-plane>
+      <a-plane width="10" height="15" position="0 0 -10" 
+      color="#BBBBBB" rotation="0 0 0"></a-plane>
 
       <a-box position="0 2 -2.5" rotation="45 45 45"></a-box> 
      <a-light color="blue" position="0 5 -3"></a-light>
+    <a-light color="red" position="0 5 -1"></a-light>
+
     </a-scene>
  </body>
 </html>
