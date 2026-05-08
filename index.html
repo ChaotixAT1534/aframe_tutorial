@@ -20,12 +20,14 @@
      <a-light color="blue" position="0 5 -3"></a-light>
      <a-light color="red" position="0 5 -1" type="ambient" intensity="0.3"></a-light>
 
-    <a-cylinder color="purple" height="5" position="2 2.5 -5" sound="src: #water;
+    <a-cylinder color="purple" height="5" position="2 2.5 -5" sound= "src: #water;
      on: click; 
      volume:1; 
      refDistance:4; 
      rolloffFactor:4">
+      <a-entity sound = "src: #water; autoplay: true"></a-entity>
      </a-cylinder>
+     
      
     <a-video src="#sample-video" width="16" height="9" position="0 0 -15"></a-video>
     </a-scene>
