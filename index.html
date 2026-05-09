@@ -11,6 +11,15 @@
       });
      }
     });
+
+    AFRAME.registerComponent('stop', {
+     init: function(){
+       var myEl = document.querySelector('#yellow');
+      this.el.addEventListener('click', function(){
+       myEl.components.sound.stopSound();
+      });
+     }
+    });
    </script>
   
  </head>
