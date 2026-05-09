@@ -6,7 +6,7 @@
     AFRAME.registerComponent('play', {
      init: function(){
        var myEl = document.querySelector('#yellow');
-      this.el.addEventListener('click', function(){
+      this.el.addEventListener('click', function() {
        myEl.components.sound.playSound();
       });
      }
@@ -29,7 +29,7 @@
 
         <assets>
     <video id="sample-video" autoplay loop="true" src="fire.mp4"></video>
-    <audio id="water" src="video/water-waves.mp3"></audio>
+    <audio id="water" src="video/water-waves.mp4"></audio>
    </assets>
      
       <a-plane width="45" height="35" position="0 -2 -10" color="#AAAAAA" rotation="-90 0 0"></a-plane>
