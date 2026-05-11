@@ -5,7 +5,7 @@
    <script>
     AFRAME.registerComponent('play', {
      init: function(){
-       var myEl = document.querySelector('#yellow');
+       var myEl = document.querySelector('#box');
       this.el.addEventListener('click', function() {
        myEl.components.sound.playSound();
       });
@@ -14,7 +14,7 @@
 
     AFRAME.registerComponent('stop', {
      init: function(){
-       var myEl = document.querySelector('#yellow');
+       var myEl = document.querySelector('#box');
       this.el.addEventListener('click', function(){
        myEl.components.sound.stopSound();
       });
@@ -26,11 +26,46 @@
 
  <body>
     <a-scene>
-
         <assets>
     <video id="sample-video" autoplay loop="true" src="water_waves.mp4"></video>
-    <audio id="water" src="assets/video/water_waves.mp3"></audio>
+    <audio id="basket" src="video/indoor_basketball.mp3">
+  </audio>
+
+       <img id="dogsky" src="img/cursordog.jpg">
+       <img id="grass" src="img/Ground031_1K-JPG_Color.jpg">
+       <!-- Add asset here -->
+       <a-asset-item
+         id="restaurant"
+         src="model/spongebob_hamburger_restaurant.glb"></a-asset-item>
+
    </assets>
+
+   <!--Camera-->
+      <a-entity position="0 0 10">
+        <a-camera></a-camera>
+        <a-cursor></a-cursor>
+        </a-camera>
+      </a-entity>
+
+
+<a-sky src="#dogsky"></a-sky>
+     <a-plane
+       src="#grass"
+       width="50" height="20" position="0 -2 -37.5" color="grey" rotation="-90 0 0"></a-plane>
+     <a-text
+       value="Welcome to my basketball realm!"
+       color="#FFD500"
+       align="center"
+       position="0 3 -4"></a-text>
+     <!-- Add entity here: -->
+     <a-gltf-model
+       src="#restaurant"
+       position="-35 -2 -30"
+       rotation="0 90 0"
+       scale="0.5 0.5 0.5"></a-gltf-model>
+
+
+
      
       <a-plane width="45" height="35" position="0 -2 -10" color="#AAAAAA" rotation="-90 0 0"></a-plane>
     
@@ -43,11 +78,12 @@
      volume:1; 
      refDistance:4; 
      rolloffFactor:4">
-      <a-entity sound = "src: #water; autoplay: true"></a-entity>
+     <a-entity sound = "src: #water;autoplay;true" position= "-0.05348 1.51207 0.92306" >
+      </a-entity>
+
      </a-cylinder>
 
      <!-- Basketball Court-->
-     <a-plane  width="40" height="20" position="0 -2 -37.5" color="grey" rotation="-90 0 0"></a-plane>
      <a-cylinder color="#a80210" height="20" position="-20 5 -37"></a-cylinder>
      <a-box color="black" height="6" width="6" position="-19.8 15 -37" rotation="0 90 0"></a-box>
       <a-torus color="#FFFF00" position="-18.5 12.5 -37" rotation="90 0 0"></a-torus>
@@ -59,13 +95,17 @@
      <!-- Basketball-->
      <a-sphere color="orange" radius="1.5" position="0 0 -37.5"></a-sphere>
      
-     <!-- sound -->
-     <a-box id="yellow" color="yellow" position="1.5 0.5 -2.5" sound="src: #water">
-     <a-sphere color="green" radius="0.25" position="-0.5 1 0" play></a-sphere>
-      <a-sphere color="red" radius="0.25" position="0.5 1 0" stop></a-sphere>
+     <!--sound--> 
+     <a-box id="box" color="yellow" position="1.5 0.5 -2.5" sound="src: #basket">
+     <a-sphere src="#basket" color="green" radius="0.25" position="-0.5 1 0" play></a-sphere>
+      <a-sphere src="#basket" color="red" radius="0.25" position="0.5 1 0" stop></a-sphere>
      </a-box>
+     
      
     <a-video src="#sample-video" width="16" height="9" position="0 2 -50"></a-video>
     </a-scene>
+
+
+    
  </body> 
 </html>
